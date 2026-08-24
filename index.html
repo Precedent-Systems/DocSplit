@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocSplit | Open-Source Legal Document & Court Record Slicer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131b2e;
+      --border: #23314d;
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --accent: #34d399;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: #000;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 3.5rem auto 2rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(to right, #ffffff, #6ee7b7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .grid {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--primary); }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .code-block {
+      background: #040711;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: #34d399;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 4rem auto 0;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="#" class="logo">
+        DocSplit
+        <span class="logo-badge">Precedent Systems</span>
+      </a>
+      <div style="display: flex; gap: 1rem;">
+        <a href="https://github.com/Precedent-Systems/DocSplit" target="_blank" class="btn">View GitHub Repository</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Smart Legal Document & Docket Slicer</h1>
+      <p>DocSplit automatically inspects massive 1,000-page court records, appellate dockets, and exhibit packets, slicing them into cleanly titled individual document PDFs by bookmark TOC and legal header boundaries.</p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="https://github.com/Precedent-Systems/DocSplit" target="_blank" class="btn">🚀 Get Started on GitHub</a>
+        <a href="#quickstart" style="display: inline-flex; align-items: center; background: var(--card-bg); color: var(--text); padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); font-weight: 600; text-decoration: none;">Read CLI Documentation</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-icon">📑</div>
+        <h3>Docket Bookmark TOC Slicer</h3>
+        <p>Reads internal PDF bookmarks to extract each motion, complaint, declaration, and order into separate files titled by filing date and name.</p>
+        <div class="code-block">docsplit split court_record.pdf</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Zero Size Limits (Local & Free)</h3>
+        <p>No paywalls or 50-page file size caps. Slices 1,000+ page court volumes in under 5 seconds directly on your local machine.</p>
+        <div class="code-block">1,000 pages -> 149 individual PDFs</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Docket Inspector & Indexer</h3>
+        <p>Inspects any court record PDF and outputs a structured JSON index table of all internal filing dates, page ranges, and document titles.</p>
+        <div class="code-block">docsplit inspect court_record.pdf</div>
+      </div>
+    </section>
+
+    <section id="quickstart" style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">DocSplit CLI Integration</h2>
+      <div class="code-block" style="font-size: 1rem; line-height: 1.8;">
+# 1. Install DocSplit locally
+git clone https://github.com/Precedent-Systems/DocSplit.git
+cd DocSplit
+pip install -e .
+
+# 2. Slice a massive court record volume into individual document PDFs
+docsplit split "/path/to/23CV23393 Volume 1.pdf"
+
+# 3. Inspect document TOC structure without extracting
+docsplit inspect "/path/to/23CV23393 Volume 1.pdf"
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>DocSplit is developed by <a href="https://github.com/Precedent-Systems" target="_blank">Precedent Systems Org</a> under the AGPLv3 License.</p>
+  </footer>
+
+</body>
+</html>
